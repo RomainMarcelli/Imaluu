@@ -142,52 +142,50 @@
 
 
             <div class="content">
-            <div class="savoirplus">
-                <p class="changeText">Plus +</p>
-            </div>
+                <div class="savoirplus">
+                    <p class="changeText">Plus +</p>
+                </div>
 
-            <div class="photo">
-                <div class="diaporama">
-                <div class="diapo anim">
-                    <img src="../assets/img/img1.jpg" />
-                    <div class="description">London, England</div>
+                <div class="photo">
+                    <div class="diaporama">
+                    <div class="diapo anim">
+                        <img src="../assets/img/img1.jpg" />
+                        <div class="description">London, England</div>
+                    </div>
+                    <div class="diapo anim">
+                        <img src="../assets/img/img2.jpg" />
+                        <div class="description">Sunset in Romania</div>
+                    </div>
+                    <div class="diapo anim">
+                        <img src="../assets/img/img3.jpg" />
+                        <div class="description">New York, USA</div>
+                    </div>
+                    <div class="diapo anim">
+                        <img src="../assets/img/img4.jpg" />
+                        <div class="description"> Sidney, Australie</div>
+                    </div>
+                    <div class="selector">
+                        <a class="avant" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="apres" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <div class="ref">
+                        <span class="rond" onclick="currentSlide(1)"></span>
+                        <span class="rond" onclick="currentSlide(2)"></span>
+                        <span class="rond" onclick="currentSlide(3)"></span>
+                        <span class="rond" onclick="currentSlide(4)"></span>
+                    </div>
+                    </div>
                 </div>
-                <div class="diapo anim">
-                    <img src="../assets/img/img2.jpg" />
-                    <div class="description">Sunset in Romania</div>
-                </div>
-                <div class="diapo anim">
-                    <img src="../assets/img/img3.jpg" />
-                    <div class="description">New York, USA</div>
-                </div>
-                <div class="diapo anim">
-                    <img src="../assets/img/img4.jpg" />
-                    <div class="description"> Sidney, Australie</div>
-                </div>
-                <div class="selector">
-                    <a class="avant" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="apres" onclick="plusSlides(1)">&#10095;</a>
-                </div>
-                <div class="ref">
-                    <span class="rond" onclick="currentSlide(1)"></span>
-                    <span class="rond" onclick="currentSlide(2)"></span>
-                    <span class="rond" onclick="currentSlide(3)"></span>
-                    <span class="rond" onclick="currentSlide(4)"></span>
-                </div>
-                </div>
-            </div>
-            <script src="diaporama.js">
 
-            </script>
-
-
-                <div class="quisomme">
-                    <img src="../assets/img/qui.jpg" alt="Qui sommes nous">
+                <div class="test">
+                    <img src="../assets/img/qui.jpg" alt="" class="test_img">
                     <h2>Qui sommes nous ?</h2>
                     <p>
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab unde totam quam velit dicta mollitia reprehenderit molestiae quidem voluptatum neque a vero nesciunt, quisquam, earum commodi vitae, autem nemo eveniet?Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem molestias ratione officiis repellendus tempore unde asperiores, non expedita quod, accusamus quibusdam, itaque cum ullam. Incidunt quam doloremque ea deleniti veniam?Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                     </p>
                 </div>
+
+
             </div>
 
 

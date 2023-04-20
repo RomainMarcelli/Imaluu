@@ -1,5 +1,4 @@
 <?php
-include '../inc/fonctions.inc.php'; // des fonctions utiles
     // Restriction d'accès
 
 

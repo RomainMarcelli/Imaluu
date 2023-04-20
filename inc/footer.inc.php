@@ -68,10 +68,10 @@
                         </div>
                     </ul>
                     <ul class="num">
-                        <li class="tel">07 81 42 85 85</li>
+                        <li class="tel"> <a href="tel:0612345678">0612345678</a> </li>
                         <li><a href="#"><img src="../assets/img/logo.png" alt="logo"></a></li>
                         <li>
-                            <p class="mail">r.marcelli31@gmail.com</p>
+                            <p class="mail"> <a href="mailto:user.admin@gmail.com">user.admin@gmail.com</a></p>
                         </li>
                     </ul>
                 </div>

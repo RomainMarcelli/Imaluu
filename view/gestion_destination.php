@@ -4,6 +4,8 @@ include '../inc/fonctions.inc.php'; // des fonctions utiles
 
 
     // Traitements PHP
+    include '../controller/gestion_destination.php';
+
 
 
 // début des affichages
@@ -14,31 +16,41 @@ include '../inc/nav.inc.php';
 
 
         <div>
-            <h1>Profil</h1>
-            <p>Votre profil</p>
+            <h1>Gestions des destinations</h1>
+            <p>Gestions</p>
         </div>
 
 
         <div class="row">
                 <div class="col-sm-8 mx-auto">
-                    <form method="post" class="border mt-5 p-3" enctype="multipart/form-data">
+                    <form method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="titre">Titre</label>
-                            <input type="text" name="titre" id="titre" class="form-control">
+                            <input type="text" name="titre" id="titre" >
                         </div>
                         <div class="mb-3">
-                            <label for="img_principale">Image principale</label>
-                            <input type="text" name="img_principale" id="img_principale" class="form-control">
+                            <label for="img1">Image principale</label>
+                            <input type="text" name="img1" id="img1" >
                         </div>
                         <div class="mb-3">
-                            <label for="id_categorie">Catégorie</label>
-                            <select name="id_categorie" id="id_categorie" class="form-select">
-                                <?php echo $options; ?>
-                            </select>
+                            <label for="img2">Image secondaire</label>
+                            <input type="text" name="img2" id="img2" >
                         </div>
                         <div class="mb-3">
-                            <label for="contenu">Contenu</label>
-                            <textarea name="contenu" id="contenu" class="form-control" rows="14"></textarea>
+                            <label for="img3">Image bas de page</label>
+                            <input type="text" name="img3" id="img3" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="description1">Description principale</label>
+                            <textarea name="description1" id="description1"  rows="14"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description2">Description secondaire</label>
+                            <textarea name="description2" id="description2"  rows="14"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="map">Localisation</label>
+                            <input type="text" name="map" id="map" >
                         </div>
                        
                         <button type="submit" class="btn btn-outline-dark w-100">Enregistrement</button>
@@ -49,13 +61,13 @@ include '../inc/nav.inc.php';
             <div class="col-12">
                     <table class="table table-bordered mt-5">
                         <tr>
-                            <th>Id article</th>
-                            <th>Id utilisateur</th>
                             <th>Titre</th>
-                            <th>Catégorie</th>
-                            <th>Contenu</th>
-                            <th>Image principale</th>
-                            <th>Date enregistrement</th>
+                            <th>Description 1</th>
+                            <th>Description 2</th>
+                            <th>Image 1</th>
+                            <th>Image 2</th>
+                            <th>Image 3</th>
+                            <th>Localisation</th>
                             <th>Action</th>
                         </tr>
                         <?php echo $tableau; ?>

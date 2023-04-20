@@ -1,7 +1,7 @@
 <?php
 // Le controller : les traitements PHP
 // on récupère le model (le chemin part depuis le fichier d'où est appelé celui ci)
-include 'model/gestion_article.php';
+include '../model/gestion_destination.php';
 
 if(!empty($_SESSION['message'])) {
     $msg .= $_SESSION['message'];
@@ -10,54 +10,55 @@ if(!empty($_SESSION['message'])) {
 
 // Traitements PHP
 // restriction d'accès : si l'utilisateur n'est pas admin, on redirige vers connexion.php
-if( ! user_is_admin() ) {
-    header('location: connexion.php');
-    exit(); // on bloque l'exécution du code qui suit cette ligne.
-}
+
 
 
 // Récupération des catégorie et préparation des options du select
-$categories = get_categories();
-$options = '';
-foreach($categories AS $sous_tableau) {
-    $options .= '<option value="' . $sous_tableau['id_categorie'] . '">' . $sous_tableau['nom_categorie'] . '</option>';
-}
+// $categories = get_categories();
+// $options = '';
+// foreach($categories AS $sous_tableau) {
+//     $options .= '<option value="' . $sous_tableau['id_categorie'] . '">' . $sous_tableau['nom_categorie'] . '</option>';
+// }
 
 
-// Enregistrement des articles
-if( isset($_POST['titre']) && isset($_POST['img_principale']) && isset($_POST['id_categorie']) && isset($_POST['contenu']) ) {
+// Enregistrement des destinations
+if( isset($_POST['titre']) && isset($_POST['img1']) && isset($_POST['img2']) && isset($_POST['img3']) && isset($_POST['description1']) && isset($_POST['description2']) && isset($_POST['map']) ) {
     $titre = trim($_POST['titre']);
-    $img_principale = trim($_POST['img_principale']);
-    $id_categorie = trim($_POST['id_categorie']);
-    $contenu = trim($_POST['contenu']);
+    $img1 = trim($_POST['img1']);
+    $img2 = trim($_POST['img2']);
+    $img3 = trim($_POST['img3']);
+    $description1 = trim($_POST['description1']);
+    $description2 = trim($_POST['description2']);
+    $map = trim($_POST['map']);
+    
 
-    create_post($titre, $img_principale, $id_categorie, $contenu);
-    header('location: gestion_article.php'); // on recharge la page afin de ne pas faire un double enregistrement en  rafraichissant la page
+    create_post($titre, $img1, $img2, $img3, $description1, $description2, $map);
+    header('location: ../view/gestion_destination.php'); // on recharge la page afin de ne pas faire un double enregistrement en  rafraichissant la page
 }
 
-// Suppression d'un article
-if(isset($_GET['action']) && $_GET['action'] == 'supprimer' && !empty($_GET['id_article'])) {
-    delete_post($_GET['id_article']);
-    $_SESSION['message'] = '<div class="alert alert-success">L\'article n°' . $_GET['id_article'] . ' a bien été supprimé.</div>';
-    header('location: gestion_article.php');
+// Suppression d'une destination
+if(isset($_GET['action']) && $_GET['action'] == 'supprimer' && !empty($_GET['id_destination'])) {
+    delete_post($_GET['id_destination']);
+    $_SESSION['message'] = '<div class="alert alert-success">L\'destination n°' . $_GET['id_destination'] . ' a bien été supprimé.</div>';
+    header('location: gestion_destination.php');
 }
 
 
 
 // Affichage du tableau html
-$liste_articles = get_articles();
+$liste_destinations = get_destinations();
 $tableau = '';
-foreach($liste_articles AS $sous_tableau) {
+foreach($liste_destinations AS $sous_tableau) {
     $tableau .= '<tr>';
 
-    $tableau .= '<td>' . $sous_tableau['id_article'] . '</td>';
-    $tableau .= '<td>' . $sous_tableau['id_utilisateur'] . '</td>';
     $tableau .= '<td>' . $sous_tableau['titre'] . '</td>';
-    $tableau .= '<td>' . $sous_tableau['nom_categorie'] . '</td>';
-    $tableau .= '<td>' . substr($sous_tableau['contenu'], 0, 11) . ' ...</td>';
-    $tableau .= '<td><img src="' . $sous_tableau['img_principale'] . '" style="width: 100px;"></td>';
-    $tableau .= '<td>' . $sous_tableau['date_enregistrement'] . '</td>';
-    $tableau .= '<td><a href="?action=supprimer&id_article=' . $sous_tableau['id_article'] . '" class="btn btn-danger" onclick="return(confirm(\' êtes vous sûr ?\'))" ><i class="bi bi-trash"></i></a></td>';
+    $tableau .= '<td>' . $sous_tableau['description1'] . '</td>';
+    $tableau .= '<td>' . $sous_tableau['description2'] . '</td>';
+    $tableau .= '<td><img src="' . $sous_tableau['img1'] . '" style="width: 100px;"></td>';
+    $tableau .= '<td><img src="' . $sous_tableau['img2'] . '" style="width: 100px;"></td>';
+    $tableau .= '<td><img src="' . $sous_tableau['img3'] . '" style="width: 100px;"></td>';
+    $tableau .= '<td>' . $sous_tableau['map'] . '</td>';
+    $tableau .= '<td><a href="?action=supprimer&id_destination=' . $sous_tableau['id_destination'] . '" class="btn btn-danger" onclick="return(confirm(\' êtes vous sûr ?\'))" >Supprimer</a></td>';
 
     $tableau .= '</tr>';
 }
