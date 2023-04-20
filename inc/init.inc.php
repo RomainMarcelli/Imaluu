@@ -13,5 +13,6 @@ $pdo = new PDO($host, $login, $password, $options);
 $msg = '';
 
 // On crée ou on ouvre la session
-session_start();
-        
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}

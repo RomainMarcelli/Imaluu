@@ -8,15 +8,19 @@ body{
     z-index: 5;
 }
 
+textarea {
+    resize: none;
+    width: 350px;
+}
+
 header {
     width: 100%;
-    height: 72vh;
+    height: 100vh;
     background-image: url(../img/rogne.gif);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    filter: blur(8px);
-    z-index: 1;
+    filter: blur(7px);
 }
 
 nav {
@@ -152,7 +156,7 @@ h1 {
     color: #FFF;
     width: 1800px;
     position: absolute;
-    top: 160px;
+    top: 260px;
     left: 50%;
     translate: -50%;
     text-align: center;
@@ -170,7 +174,7 @@ h1 {
     height: 84px;
     left: 50%;
     translate: -50%;
-    top: 400px;
+    top: 550px;
     z-index: 1;
 }
 
@@ -288,33 +292,6 @@ h1 {
     transition: 0.7s;
 }
 
-.quisomme img {
-    display: block;
-    margin: auto;
-    width: 60%;
-    height: auto;
-    border-radius: 80px;
-    box-shadow: 0px 0px 50px 10px #000000;
-    margin-top: 350px;
-}
-
-.quisomme h2 {
-        font-size: 60px;
-        font-family: sans-serif;
-        letter-spacing: px;
-        text-align: center;
-        position: relative;
-        bottom: 600px;
-}
-
-.quisomme p {
-    font-size: 30px;
-    text-align: center;
-    position: relative;
-    bottom: 520px;
-    width: 35%;
-    margin: auto;
-}
 .content {
     margin-top: 100px;
 }
@@ -322,6 +299,7 @@ h1 {
 .savoirplus {
     text-align: center;
 }
+
  .savoirplus p {
     display: initial;
     padding: 10px 50px;
@@ -586,148 +564,191 @@ svg:hover {
 }
 
 /* /////////////////////////////////////// */
-  
-  /* Tout le contenu du diaporama */
-  
-  .diapo {
-    display: none;
-  }
-  
-  .photo img {
-    vertical-align: middle;
-    width: 100%;
-    border-radius: 20px;
-    height: 300px;
-  }
-  
-  .photo {
-    background-image: url(../img/appareil_photo.png);
-    background-repeat: no-repeat;
-    height: 1000px;
-    max-width: 656px;
-    margin: auto;
-    margin-top: 200px;
-  }
-  
-  /* Chaque image du diaporama */
-  
-  .diaporama {
-    max-width: 444px;
-    position: relative;
-    padding-top: 199px;
-    margin-left: 23px;
-  }
-  
-  /* Boutons Pour aller de l'ancienne à la nouvelle image */
-  
-  .selector {
-    cursor: pointer;
-    position: absolute;
-    top: 76%;
-    width: 109px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 35px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    left: 104%;
-  }
-  
-  .apres {
-    margin-left: 44px;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  .avant {
-    right: 1%;
-  }
-  
-  .avant:hover,
-  .apres:hover {
-    color: #999999;
-  }
-  
-  /* Description des images */
-  
-  .description {
-    color: #ffffff;
-    font-size: 20px;
-    position: absolute;
-    bottom: 25px;
-    width: 100%;
-    text-align: center;
-  }
-  
-  /* Marque page */
-  .marque_page {
-    color: #ffffff;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-  }
-  
-  /* Carré pour aller de la page x a la page x */
-  
-  .ref {
-    text-align: center;
-    bottom: 3px;
-    position: absolute;
-    left: 50%;
-    translate: -50%;
-  }
-  
-  .rond {
-    cursor: pointer;
-    height: 10px;
-    width: 10px;
-    margin: 0 2px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  
-  .active,
-  .rond:hover {
-    background-color: #111111;
-  }
-  
-  .anim {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @-webkit-keyframes anim {
-    from {
-      opacity: 0.4;
-    }
-  
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes anim {
-    from {
-      opacity: 0.4;
-    }
-  
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @media only screen and (max-width: 300px) {
-  
-    .avant,
-    .apres,
-    .description {
-      font-size: 11px;
-    }
-  }
+
+/* Tout le contenu du diaporama */
+
+.diapo {
+display: none;
+}
+
+.photo img {
+vertical-align: middle;
+width: 100%;
+border-radius: 20px;
+height: 300px;
+}
+
+.photo {
+background-image: url(../img/appareil_photo.png);
+background-repeat: no-repeat;
+height: 1000px;
+max-width: 656px;
+margin: auto;
+margin-top: 200px;
+}
+
+/* Chaque image du diaporama */
+
+.diaporama {
+max-width: 444px;
+position: relative;
+padding-top: 199px;
+margin-left: 23px;
+}
+
+/* Boutons Pour aller de l'ancienne à la nouvelle image */
+
+.selector {
+cursor: pointer;
+position: absolute;
+top: 76%;
+width: 109px;
+color: #fff;
+font-weight: bold;
+font-size: 35px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+left: 104%;
+}
+
+.apres {
+margin-left: 44px;
+border-radius: 3px 0 0 3px;
+}
+
+.avant {
+right: 1%;
+}
+
+.avant:hover,
+.apres:hover {
+color: #999999;
+}
+
+/* Description des images */
+
+.description {
+color: #ffffff;
+font-size: 20px;
+position: absolute;
+bottom: 25px;
+width: 100%;
+text-align: center;
+}
+
+/* Marque page */
+.marque_page {
+color: #ffffff;
+font-size: 12px;
+padding: 8px 12px;
+position: absolute;
+top: 0;
+}
+
+/* Carré pour aller de la page x a la page x */
+
+.ref {
+text-align: center;
+bottom: 3px;
+position: absolute;
+left: 50%;
+translate: -50%;
+}
+
+.rond {
+cursor: pointer;
+height: 10px;
+width: 10px;
+margin: 0 2px;
+background-color: #ffffff;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.6s ease;
+}
+
+.active,
+.rond:hover {
+background-color: #111111;
+}
+
+.anim {
+-webkit-animation-name: fade;
+-webkit-animation-duration: 1.5s;
+animation-name: fade;
+animation-duration: 1.5s;
+}
+
+@-webkit-keyframes anim {
+from {
+    opacity: 0.4;
+}
+
+to {
+    opacity: 1;
+}
+}
+
+@keyframes anim {
+from {
+    opacity: 0.4;
+}
+
+to {
+    opacity: 1;
+}
+}
+
+@media only screen and (max-width: 300px) {
+
+.avant,
+.apres,
+.description {
+    font-size: 11px;
+}
+}
 
   /* //////////////////////////////////////////////////////////////// */
+
+.test {
+    position: relative;
+    margin: auto;
+    width: 60%;
+    height: 70vh;
+    outline-offset: -10px;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 80px;
+    box-shadow: 0px 0px 50px 10px #000000;
+    margin-bottom: 300px;
+}
+
+.test_img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .25s;
+    transform: scale(1);
+    z-index: -1;
+}
+
+.test:hover .test_img {
+    transform: scale(1.5);
+}
+
+.test h2 {
+    font-size: 60px;
+    font-family: sans-serif;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.test p {
+    font-size: 30px;
+    text-align: center;
+    width: 55%;
+    margin: auto;
+    margin-top: 60px;
+}

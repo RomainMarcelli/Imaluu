@@ -1,5 +1,6 @@
 <?php
 include '../inc/init.inc.php'; // initialisation du site
+include '../inc/fonctions.inc.php';
 
 // Traitement PHP
     // connexion utilisateur
@@ -180,6 +181,11 @@ include '../inc/init.inc.php'; // initialisation du site
     </form>
   </div>
   <hr>
+  <?php 
+  if (user_is_connected()) {
+    ?> 
+    <li><a href="profil.php">Mon compte</a></li>
+    <?php } ?>
   <li><a href="#">Mes favoris</a></li>
   <li><a href="#">Mes avis</a></li>
   <li><a id="rouge" href="#">Supprimer mon compte</a></li>
